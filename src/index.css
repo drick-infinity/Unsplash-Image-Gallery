@@ -1,0 +1,322 @@
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  --default-spacing: 10px;
+  --default-margin: 1rem;
+  --medium-margin: 3rem;
+  --larger-margin: 5rem;
+
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+
+/* common css starts */
+
+.container {
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.title {
+  text-align: center;
+  margin-top: var(--default-margin);
+  font-family:'Playball', cursive;
+  color: #000;
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: var(--default-margin);
+  margin-top: var(--medium-margin);
+  margin-bottom: var(--larger-margin);
+}
+
+.buttons .btn,
+.buttons .btn:active,
+.buttons .btn:focus {
+  background-color: black;
+  color:white;
+  box-shadow: none;
+  outline: none;
+  border: none;
+}
+
+
+.error-msg {
+  color: #ff0000;
+  text-align: center;
+}
+
+
+/* common css ends */
+
+/* search section starts */
+
+.search-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: var(--default-margin);
+}
+
+.search-section .search-input {
+  min-width: 500px;
+  padding: var(--default-spacing);
+}
+
+.search-section .search-btn {
+  margin-left: var(--default-spacing);
+}
+
+/* search section ends */
+
+/* filters section starts */
+
+.filters {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-items: center;
+  /* gap: 1rem; */
+  margin-top: var(--default-margin);
+}
+
+.filters > * {
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  letter-spacing:2px;
+}
+.filters li a{
+  font-family: 'Alexandria', sans-serif;
+  font-weight:700;
+  color: #000;
+  text-decoration: none;
+}
+
+.searching{
+   display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1rem;
+  margin-top: var(--default-margin);
+}
+.searching > * {
+  padding: 10px 15px;
+  border: 1px solid grey;
+  border-radius: 5px;
+  cursor: pointer;
+  letter-spacing:2px;
+}
+.navbar{
+    display: flex;
+    flex-wrap: wrap;
+}
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+.switch input { 
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: black;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px grey;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+/* styles.css (or your preferred stylesheet) */
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+/* Dark Mode Styles */
+.dark-mode {
+  background-color: #222;
+  /* color: black; */
+}
+
+.dark-mode .dark-mode-toggle label {
+  background-color: #444;
+}
+
+body.dark-mode .images {
+  background-color: #222; 
+  /* Choose a suitable background color for images */
+  color:white;
+}
+body.dark-mode .title {
+  background-color: #222; 
+  /* Choose a suitable background color for images */
+  color:white;
+}
+body.dark-mode .searching {
+  background-color: #222; 
+  /* Choose a suitable background color for images */
+  color:white;
+  border:grey;
+}
+body.dark-mode .filters a {
+  background-color: #222; 
+  /* Choose a suitable background color for images */
+  color:white;
+}
+body.dark-mode .image-card {
+  background-color: #222; /* Choose a suitable background color for images */
+}
+body.dark-mode .image-card-row{
+  background-color: #222; /* Choose a suitable background color for images */
+}
+.dark-mode .dark-mode-toggle input:checked + label {
+  background-color: #333;
+}
+
+/* filters section ends */
+
+/* images section starts */
+
+.images {
+  margin-top: var(--medium-margin);
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-gap: var(--default-spacing);
+  justify-content: center;
+  align-items: center;
+}
+
+.images .image {
+  width: 200px;
+  height: 200px;
+  justify-self: center;
+  align-self: center;
+  margin-left: 2rem;
+  border-radius: 10px;
+  transition: transform 0.5s;
+}
+
+.images .image:hover {
+  transform: translateY(-3px);
+}
+
+
+/* image-card.css */
+.image-card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  margin: 16px;
+  padding: 16px;
+  background-color: #fff;
+  margin-top: var(--medium-margin);}
+
+.image-card-row{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.image-card__image {
+  width: 100%;
+  height: auto;
+}
+
+.image-card__details {
+  margin-top: 10px;
+}
+
+.image-card__user {
+  margin-top:15px;
+  display: flex;
+  align-items: center;
+}
+
+.image-card__user-image {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.image-card__username {
+  font-weight: bold;
+}
+
+.image-card__likes {
+  margin-top: 5px;
+  color: #777;
+}
+
+
+/* images section ends */
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .images {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .search-section .search-input {
+    width: 100%;
+    min-width: unset;
+    margin: 0 var(--default-margin);
+  }
+
+  .images {
+    grid-template-columns: 1fr;
+  }
+}
