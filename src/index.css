@@ -175,7 +175,6 @@ input:checked + .slider:before {
   -ms-transform: translateX(26px);
   transform: translateX(26px);
 }
-/* styles.css (or your preferred stylesheet) */
 
 /* Rounded sliders */
 .slider.round {
@@ -197,36 +196,30 @@ input:checked + .slider:before {
 
 body.dark-mode .images {
   background-color: #222; 
-  /* Choose a suitable background color for images */
   color:white;
 }
 body.dark-mode .title {
   background-color: #222; 
-  /* Choose a suitable background color for images */
   color:white;
 }
 body.dark-mode .searching {
   background-color: #222; 
-  /* Choose a suitable background color for images */
   color:white;
   border:grey;
 }
 body.dark-mode .filters a {
   background-color: #222; 
-  /* Choose a suitable background color for images */
   color:white;
 }
 body.dark-mode .image-card {
-  background-color: #222; /* Choose a suitable background color for images */
+  background-color: #222;
 }
 body.dark-mode .image-card-row{
-  background-color: #222; /* Choose a suitable background color for images */
+  background-color: #222;
 }
 .dark-mode .dark-mode-toggle input:checked + label {
   background-color: #333;
 }
-
-/* filters section ends */
 
 /* images section starts */
 

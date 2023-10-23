@@ -6,9 +6,6 @@ import './index.css';
 import PhotoList from './components/PhotoList';
 import DarkModeToggle from './components/DarkModeToggle';
 
-
-// import ImagePopup from './components/ImagePopup';
-
 const API_URL = 'https://api.unsplash.com/search/photos';
 const IMAGES_PER_PAGE = 18;
 
@@ -42,7 +39,6 @@ function App() {
     
     const handleSearch = (event) =>{
     event.preventDefault();
-    // console.log(searchInput.current.value);
     const searchTerm = searchInput.current.value;
     setSearchQuery(searchTerm);
      resetSearch();
@@ -57,7 +53,6 @@ function App() {
     setPage(page + 1);
   };
 
-  // console.log('page',page);
 return (<div className='container'>
      
   <nav><div className="navbar">
@@ -100,22 +95,7 @@ return (<div className='container'>
         {images.map((image) => (
             <img key={image.id} src={image.urls.small} alt={image.alt_description} className='image'></img>
       ))}
-    {/* <ImagePopup/> */}
-       {/* {selectedImage && (
-        <div className="modal">
-          <div className="modal-content">
-            <span className="close">
-              &times;
-            </span>
-            <h2>{selectedImage.user.name}</h2>
-            <img src={selectedImage.urls.regular} alt={selectedImage.alt_description} /> */}
-            {/* Add other image details as needed */}
-          {/* </div>
-        </div> */}
-      {/* )} */}
-{/* {showImagePopup && (
-  <ImagePopup imageUrl={selectedImage}/>
-)}  */}
+
         <div className='buttons'>
         {page > 1 && <Button onClick={()=>setPage(page - 1)}>Previous</Button>}
        <Button onClick={Next}>Next</Button>
@@ -124,7 +104,7 @@ return (<div className='container'>
       ):(
           <PhotoList/>
       )}
-      {/* <Typography variant='h1'>This is Typography</Typography> */}
+  
     
       </div>); 
     }
